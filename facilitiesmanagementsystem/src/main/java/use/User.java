@@ -2,7 +2,7 @@
 //POSSIBLE IMPLIMENTATION
 //UNNECESSARY AS OF 2/22/2020
 
-package fms;
+package use;
 
 public class User {
 

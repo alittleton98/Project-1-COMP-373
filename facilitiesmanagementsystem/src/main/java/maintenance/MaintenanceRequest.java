@@ -1,17 +1,17 @@
-package fms;
+package maintenance;
 
-public class FacilityMaintenanceRequest {
+public class MaintenanceRequest {
     private int FacilityIDNum;
     private String requestReason;
     private int daysRequired;
 
-    FacilityMaintenanceRequest() {
+    MaintenanceRequest() {
         FacilityIDNum = 0;
         requestReason = "";
         daysRequired = 1;
     }
 
-    FacilityMaintenanceRequest(int fID, String request, int days) {
+    MaintenanceRequest(int fID, String request, int days) {
         FacilityIDNum = fID;
         requestReason = request;
         daysRequired = days;
