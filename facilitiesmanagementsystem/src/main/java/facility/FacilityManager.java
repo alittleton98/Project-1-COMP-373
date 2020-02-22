@@ -5,11 +5,12 @@ import java.util.*;
 public class FacilityManager implements FacilityManagement {
     protected ArrayList<Facility> FacilitiesList;
     protected ArrayList<Facility> availableFacilities;
+    Scanner user = new Scanner(System.in);
 
     public void listAvailableFacilities() {
         for (int i = 0; i < availableFacilities.size(); i++) {
-            if (availableFacilities(i).getFacilityUseCondition() == false) {
-                System.out.println(availableFacilities(i).getFacilityID());
+            if (availableFacilities.get(i).getFacilityUseCondition() == false) {
+                System.out.println (availableFacilities.get(i).getFacilityID());
             }
         }
     }
@@ -26,24 +27,28 @@ public class FacilityManager implements FacilityManagement {
     }
 
     public void addNewFacility(Facility f) {
-
+        FacilitiesList.add(f);
     }
 
     public void addFacilityDetail(Facility f, String detail) {
         switch (detail) {
             case "ID":
+                //
 
             case "Location":
-            
-            case value:
+                //
 
-            case value:
+            case "Use Condition":
+                //
 
-            case value:
+            case "Maintenance Cost":
+                //
 
-            case value:
+            case "Maintenance Status":
+                //
 
-            case value:
+            case "Employee Count":
+                //
 
             default:
                 System.out.println("Nothing was changed");

@@ -63,8 +63,12 @@ public class Facility {
         buildingCluster.add(b);
     }
 
-    public void addEmployee(int n) {
+    public void setEmployeeCount(int n) {
         employeeCount = employeeCount + n;
+    }
+
+    public int getCapacityCount() {
+        return FACILITY_CAPACITY - employeeCount;
     }
 
     public void printFacilityInfo() {

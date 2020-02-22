@@ -10,8 +10,8 @@ interface FacilityManagement {
 
     public void addNewFacility(Facility f);
 
-    public void addFacilityDetail(Facility f);
+    public void addFacilityDetail(Facility f, String detail);
 
-    public void removeFacility();
+    public Facility removeFacility(Facility f);
 
 }
