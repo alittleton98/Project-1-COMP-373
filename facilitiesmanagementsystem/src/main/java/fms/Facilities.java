@@ -1,5 +1,0 @@
-package fms;
-
-interface facilities {
-
-}

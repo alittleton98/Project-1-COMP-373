@@ -1,0 +1,5 @@
+package fms;
+
+interface FacilityManagement {
+
+}
