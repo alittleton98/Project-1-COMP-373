@@ -1,6 +1,7 @@
 package facility;
 
 import java.util.*;
+import maintenance.*;
 
 public class Facility {
     private int facilityIDNum;
@@ -9,8 +10,9 @@ public class Facility {
     private ArrayList<Building> buildingCluster;
     private int costToMaintain;
     private boolean inMaintenance;
-    protected final int FACILITY_CAPACITY;
-    protected int employeeCount;
+    private final int FACILITY_CAPACITY;
+    private int employeeCount;
+    protected ArrayList<MaintenanceRequest> facilityMaintenanceRequests;
 
     Facility() {
         facilityIDNum = 0;
@@ -69,6 +71,17 @@ public class Facility {
 
     public int getCapacityCount() {
         return FACILITY_CAPACITY - employeeCount;
+    }
+
+    public void addMaintenanceRequest(MaintenanceRequest m) {
+        facilityMaintenanceRequests.add(m);
+    }
+
+    public void listMaintenanceRequests() {
+        for (int i = 0; i < facilityMaintenanceRequests.size(); i++) {
+            System.out.println(facilityMaintenanceRequests.get(i).printRequestInfo());
+
+        }
     }
 
     public void printFacilityInfo() {

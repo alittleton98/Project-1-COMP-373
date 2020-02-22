@@ -10,7 +10,7 @@ public class FacilityManager implements FacilityManagement {
     public void listAvailableFacilities() {
         for (int i = 0; i < availableFacilities.size(); i++) {
             if (availableFacilities.get(i).getFacilityUseCondition() == false) {
-                System.out.println (availableFacilities.get(i).getFacilityID());
+                System.out.println(availableFacilities.get(i).getFacilityID());
             }
         }
     }
@@ -20,10 +20,7 @@ public class FacilityManager implements FacilityManagement {
     }
 
     public int requestAvailableCapacity(Facility f) {
-        int cap = f.FACILITY_CAPACITY;
-        int currentCount = f.employeeCount;
-
-        return cap - currentCount;
+        return f.getCapacityCount();
     }
 
     public void addNewFacility(Facility f) {
