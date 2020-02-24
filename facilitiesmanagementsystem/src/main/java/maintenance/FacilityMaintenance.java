@@ -1,5 +1,7 @@
 package maintenance;
 
+import facility.*;
+
 public interface FacilityMaintenance {
     public void makeMaintenanceRequest();
 
@@ -9,9 +11,9 @@ public interface FacilityMaintenance {
 
     public float calcProblemRateForFacility();
 
-    public int calcDownTimeForFacility();
+    public int calcDownTimeForFacility(Facility f);
 
-    public void listMaintRequests();
+    public void listMaintRequests(Facility f);
 
     public void listMaintenance();
 
