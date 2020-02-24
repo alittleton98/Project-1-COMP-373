@@ -3,13 +3,13 @@ import org.junit.*;
 import facility.*;
 
 public class FacilityManagerTest{
-    facility testFacility;
+    Facility testFacility;
 
     @Test
     public void listAvailableFacilitiesTest(){
 
     }
-    
+
     @Test
     public void getFacilityInformationTest(Facility f){
 
