@@ -1,11 +1,12 @@
 package use;
+import facility.*;
 
 public class FacilityUseManager implements FacilityUse {
 
 
 
-    public boolean isInUseDuringInterval(Facility f, ){
-
+    public boolean isInUseDuringInterval(Facility f){
+        return true;
     }
 
     public void assignFacilityToUse(){
@@ -17,7 +18,8 @@ public class FacilityUseManager implements FacilityUse {
     }
 
     public String[] listInspections(){
-
+        String[] arr = new String[10];
+        return arr;
     }
 
     public void listActualUsage(){
@@ -25,6 +27,7 @@ public class FacilityUseManager implements FacilityUse {
     }
 
     public int calcUsageRate(){
-
+        int finalrate = 0;
+        return finalrate;
     }
 }

@@ -1,7 +1,8 @@
 package use;
+import facility.*;
 
 public interface FacilityUse {
-    public boolean isInUseDuringInterval();
+    public boolean isInUseDuringInterval(Facility f);
     
     public void assignFacilityToUse();
 
