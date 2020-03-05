@@ -1,5 +1,7 @@
 package facility;
 
+//Facility management interface
+
 interface FacilityManagement {
 
     public void listAvailableFacilities();

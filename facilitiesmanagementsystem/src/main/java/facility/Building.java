@@ -1,10 +1,11 @@
 package facility;
 
 public class Building {
-    private int BuildingIDNum;
-    private int facilityIDNum;
-    private String buildingService;
+    private int BuildingIDNum; // Building Identification number
+    private int facilityIDNum; // Facility Identification number
+    private String buildingService; // Building service description
 
+    // Default constructor for building
     Building() {
         BuildingIDNum = 0;
         facilityIDNum = 0;

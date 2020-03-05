@@ -8,12 +8,13 @@ public class Facility {
     private String facilityLocation;
     private boolean inUse;
     private ArrayList<Building> buildingCluster;
-    private int costToMaintain;
+    private double costToMaintain;
     private boolean inMaintenance;
     private final int FACILITY_CAPACITY;
     private int employeeCount;
     protected ArrayList<MaintenanceRequest> facilityMaintenanceRequests;
 
+    // Default constructor for faciltiy object
     Facility() {
         facilityIDNum = 0;
         facilityLocation = "";
@@ -25,7 +26,8 @@ public class Facility {
         employeeCount = 1;
     }
 
-    Facility(int fID, String loc, boolean useCond, Building b, int cost, boolean maint, int cap, int empCount) {
+    // constructor for faciltiy object
+    Facility(int fID, String loc, boolean useCond, Building b, double cost, boolean maint, int cap, int empCount) {
         facilityIDNum = fID;
         facilityLocation = loc;
         inUse = useCond;
@@ -61,22 +63,48 @@ public class Facility {
         return inUse;
     }
 
+    public void setFacilityMaintenanceCost(double n) {
+        costToMaintain = n;
+    }
+
+    public double getFacilityMaintenanceCost() {
+        return costToMaintain;
+    }
+
+    public void setFacilityMaintenanceStatus(boolean b) {
+        inMaintenance = b;
+    }
+
+    public boolean getFacilityMaintenanceStatus() {
+        return inMaintenance;
+    }
+
+    // Function to add buildings to facility
     public void addBuilding(Building b) {
         buildingCluster.add(b);
     }
 
-    public void setEmployeeCount(int n) {
+    // Function to add any given number of employees to facility
+    public void addEmployees(int n) {
         employeeCount = employeeCount + n;
     }
 
+    // Function to add any given number of employees to facility
+    public int getEmployeeCount() {
+        return employeeCount;
+    }
+
+    // Function to return number of spaces available at the facility for emoplyees
     public int getCapacityCount() {
         return FACILITY_CAPACITY - employeeCount;
     }
 
+    // Function to add a maintenacne request to the facility
     public void addMaintenanceRequest(MaintenanceRequest m) {
         facilityMaintenanceRequests.add(m);
     }
 
+    // Function to list all maintenance requests at the selected faciltiy
     public void listMaintenanceRequests() {
         for (int i = 0; i < facilityMaintenanceRequests.size(); i++) {
             System.out.println(facilityMaintenanceRequests.get(i).printRequestInfo());
@@ -84,6 +112,7 @@ public class Facility {
         }
     }
 
+    // Returns all facility information
     public void printFacilityInfo() {
         System.out.println("Facility ID Number:                     " + facilityIDNum);
         System.out.println("Facility Location:                      " + facilityLocation);

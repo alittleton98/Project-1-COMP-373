@@ -1,7 +1,9 @@
 package maintenance;
 
+//import faciltiy package
 import facility.*;
 
+//Faciltiy Maintenance interface
 public interface FacilityMaintenance {
     public void makeMaintenanceRequest();
 
