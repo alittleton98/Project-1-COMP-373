@@ -99,6 +99,10 @@ public class Facility {
         return FACILITY_CAPACITY - employeeCount;
     }
 
+    public ArrayList<MaintenanceRequest> getMaintList() {
+        return facilityMaintenanceRequests;
+    }
+
     // Function to add a maintenacne request to the facility
     public void addMaintenanceRequest(MaintenanceRequest m) {
         facilityMaintenanceRequests.add(m);

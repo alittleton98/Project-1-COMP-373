@@ -5,13 +5,15 @@ import facility.*;
 
 //Faciltiy Maintenance interface
 public interface FacilityMaintenance {
-    public void makeMaintenanceRequest();
+    public void makeMaintenanceRequest(Facility f);
+
+    // public boolean facilityExists(int fID);
 
     public void scheduleMaintenance();
 
-    public double calcMaintenanceCostForFacility();
+    public double calcMaintenanceCostForFacility(Facility f);
 
-    public float calcProblemRateForFacility();
+    public float calcProblemRateForFacility(Facility f);
 
     public int calcDownTimeForFacility(Facility f);
 
@@ -19,6 +21,6 @@ public interface FacilityMaintenance {
 
     public void listMaintenance();
 
-    public void listFacilityProblems();
+    public void listFacilityProblems(Facility f);
 
 }
