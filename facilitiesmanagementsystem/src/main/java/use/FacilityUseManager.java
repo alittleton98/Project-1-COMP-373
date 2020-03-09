@@ -36,18 +36,8 @@ public class FacilityUseManager implements FacilityUse {
 
     }
 
-    <<<<<<<HEAD
+    public String[] listInspections(Facility f) {
 
-    public String[] listInspections(){
-        String[] arr = new String[10];
-        return arr;
-=======
-
-    public String[] listInspections(Facility f){
-        
-        // unsure what this should do
-
->>>>>>> 951665028add26aa1d0ae12aaf490cc734cf3fe7
     }
 
     public void listActualUsage(Facility f) {
@@ -56,17 +46,12 @@ public class FacilityUseManager implements FacilityUse {
 
     }
 
-    <<<<<<<HEAD
+    public int calcUsageRate(Facility f) {
+        // list total time a facility has been used / time unused during business hours
+        // (?)
 
-    public int calcUsageRate(){
         int finalrate = 0;
         return finalrate;
-=======
-
-    public int calcUsageRate(Facility f){
-
-        // list total time a facility has been used / time unused during business hours (?)
-
->>>>>>> 951665028add26aa1d0ae12aaf490cc734cf3fe7
     }
+
 }

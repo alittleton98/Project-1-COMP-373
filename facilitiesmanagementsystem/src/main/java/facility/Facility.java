@@ -111,8 +111,7 @@ public class Facility {
     // Function to list all maintenance requests at the selected faciltiy
     public void listMaintenanceRequests() {
         for (int i = 0; i < facilityMaintenanceRequests.size(); i++) {
-            System.out.println(facilityMaintenanceRequests.get(i).printRequestInfo());
-
+            facilityMaintenanceRequests.get(i).printRequestInfo();
         }
     }
 

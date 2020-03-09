@@ -1,16 +1,17 @@
 package use;
+
 import facility.*;
 
 public interface FacilityUse {
-    public boolean isInUseDuringInterval(Facility f);
-    
-    public void assignFacilityToUse();
+    public boolean isInUseDuringInterval(Facility f, String day);
 
-    public void vacateFacility();
+    public void assignFacilityToUse(Facility f, User u);
 
-    public String[] listInspections();
+    public void vacateFacility(Facility f, String day);
 
-    public void listActualUsage();
+    public String[] listInspections(Facility f);
 
-    public int calcUsageRate();
+    public void listActualUsage(Facility f);
+
+    public int calcUsageRate(Facility f);
 }

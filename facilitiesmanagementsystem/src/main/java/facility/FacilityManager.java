@@ -19,6 +19,10 @@ public class FacilityManager implements FacilityManagement {
         }
     }
 
+    public ArrayList<Facility> getFacilitiesList() {
+        return FacilitiesList;
+    }
+
     // Provides information for the provided facility
     public void getFacilityInformation(Facility f) {
         f.printFacilityInfo();
@@ -50,11 +54,11 @@ public class FacilityManager implements FacilityManagement {
             case "Use Condition":
                 System.out.print(
                         "Please enter the new use status for this facility (\"true\" for in use/\"false\" for not in use): ");
-                String b = user.nextLine();
-                if (b.equals("true") || b.equals("True")) {
+                String useBool = user.nextLine();
+                if (useBool.equals("true") || useBool.equals("True")) {
                     f.setFacilityUseCondition(true);
                 }
-                if (b.equals("false") || b.equals("False")) {
+                if (useBool.equals("false") || useBool.equals("False")) {
                     f.setFacilityUseCondition(false);
                 }
                 System.out.println("Facility Use Condition is now: " + f.getFacilityUseCondition());
@@ -66,11 +70,11 @@ public class FacilityManager implements FacilityManagement {
             case "Maintenance Status":
                 System.out.print(
                         "Please enter the new use status for this facility (\"true\" for in use/\"false\" for not in use): ");
-                String b = user.nextLine();
-                if (b.equals("true") || b.equals("True")) {
+                String maintBool = user.nextLine();
+                if (maintBool.equals("true") || maintBool.equals("True")) {
                     f.setFacilityMaintenanceStatus(true);
                 }
-                if (b.equals("false") || b.equals("False")) {
+                if (maintBool.equals("false") || maintBool.equals("False")) {
                     f.setFacilityMaintenanceStatus(false);
                 }
                 System.out.println("Facility Use Condition is now: " + f.getFacilityMaintenanceStatus());

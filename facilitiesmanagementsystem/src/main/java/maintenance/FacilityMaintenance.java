@@ -17,7 +17,7 @@ public interface FacilityMaintenance {
 
     public int calcDownTimeForFacility(Facility f);
 
-    public void listMaintRequests(Facility f);
+    public void listFacilityMaintRequests(Facility f);
 
     public void listMaintenance();
 
