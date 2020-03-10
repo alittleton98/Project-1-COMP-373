@@ -89,6 +89,14 @@ public class Facility {
         employeeCount = employeeCount + n;
     }
 
+    public void setEmployeeCount(int n) {
+        this.employeeCount = n;
+    }
+
+    public void setFacilityCapacity(int n) {
+        this.FACILITY_CAPACITY = n;
+    }
+
     // Function to add any given number of employees to facility
     public int getEmployeeCount() {
         return employeeCount;

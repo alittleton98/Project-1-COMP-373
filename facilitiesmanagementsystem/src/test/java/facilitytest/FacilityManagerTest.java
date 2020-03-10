@@ -10,8 +10,10 @@ public class FacilityManagerTest {
     FacilityManager testFacilityManager;
 
     @Test
-    public int requestAvailableCapacityTest(Facility f) {
-
+    public int requestAvailableCapacityTest(Facility testFacility) {
+        testFacility.setEmployeeCount(55);
+        testFacility.setFacilityCapacity(155);
+        assertEquals(testFacility.getCapacityCount(), 100);
     }
 
     @Test
@@ -21,8 +23,8 @@ public class FacilityManagerTest {
     }
 
     @Test
-    public void addFacilityDetailTest(Facility f, String detail) {
-
+    public void addFacilityDetailTest(Facility testFacility, String detail) {
+        
     }
 
     @Test
