@@ -9,7 +9,7 @@ public interface FacilityUse {
 
     public void vacateFacility(Facility f, String day);
 
-    public String[] listInspections(Facility f);
+    public void listInspections(Facility f);
 
     public void listActualUsage(Facility f);
 

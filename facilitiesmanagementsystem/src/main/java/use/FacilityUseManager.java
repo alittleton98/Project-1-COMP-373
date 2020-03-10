@@ -12,7 +12,7 @@ public class FacilityUseManager implements FacilityUse {
         // check if userList date is already taken
 
         for (int i = 0; i < userList.size(); i++) {
-            if (userList.get(i).dayUsing == day) {
+            if (userList.get(i).getDayUsing() == day) {
                 return true;
             } else {
                 continue;
@@ -36,8 +36,10 @@ public class FacilityUseManager implements FacilityUse {
 
     }
 
-    public String[] listInspections(Facility f) {
-
+    public void listInspections(Facility f) {
+        for (int i = 0; i < f.getInspections().size(); i++) {
+            f.getInspections().get(i).printInspectionInfo();
+        }
     }
 
     public void listActualUsage(Facility f) {

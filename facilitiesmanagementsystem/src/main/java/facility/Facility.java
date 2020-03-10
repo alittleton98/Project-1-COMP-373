@@ -2,6 +2,7 @@ package facility;
 
 import java.util.*;
 import maintenance.*;
+import use.*;
 
 public class Facility {
     private int facilityIDNum;
@@ -13,9 +14,10 @@ public class Facility {
     private final int FACILITY_CAPACITY;
     private int employeeCount;
     protected ArrayList<MaintenanceRequest> facilityMaintenanceRequests;
+    protected ArrayList<Inspection> facilityInspections;
 
-    // Default constructor for faciltiy object
-    Facility() {
+    // Default constructor for facility object
+    public Facility() {
         facilityIDNum = 0;
         facilityLocation = "";
         inUse = false;
@@ -27,7 +29,8 @@ public class Facility {
     }
 
     // constructor for faciltiy object
-    Facility(int fID, String loc, boolean useCond, Building b, double cost, boolean maint, int cap, int empCount) {
+    public Facility(int fID, String loc, boolean useCond, Building b, double cost, boolean maint, int cap,
+            int empCount) {
         facilityIDNum = fID;
         facilityLocation = loc;
         inUse = useCond;
@@ -77,6 +80,15 @@ public class Facility {
 
     public boolean getFacilityMaintenanceStatus() {
         return inMaintenance;
+    }
+
+    public void addInspection() {
+        Inspection i = new Inspection(this.facilityIDNum);
+        facilityInspections.add(i);
+    }
+
+    public ArrayList<Inspection> getInspections() {
+        return facilityInspections;
     }
 
     // Function to add buildings to facility

@@ -1,8 +1,19 @@
 package use;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Inspection {
-    Date dateOfInspection;
+    int facilityID;
+    LocalDate dateOfInspection;
     Boolean facilityPassed;
+
+    public Inspection(int f) {
+        dateOfInspection = LocalDate.now();
+        facilityID = f;
+        facilityPassed = false;
+    }
+
+    public void printInspectionInfo() {
+        System.out.println(facilityID + " " + dateOfInspection + " PASSED INSPECTION: " + facilityPassed);
+    }
 }
