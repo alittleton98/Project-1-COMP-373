@@ -6,7 +6,7 @@ public class Building {
     private String buildingService; // Building service description
 
     // Default constructor for building
-    Building() {
+    public Building() {
         BuildingIDNum = 0;
         facilityIDNum = 0;
         buildingService = "Warehouse";

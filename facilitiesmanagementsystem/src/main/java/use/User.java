@@ -11,7 +11,7 @@ public class User {
     private boolean isUsing;
     private int totalTimeUsed;
 
-    User(int id, int facilID, String dayUsing, int totalTimeUsed){
+    User(int id, int facilID, String dayUsing, int totalTimeUsed) {
         this.userID = id;
         this.FacilityIDNum = facilID;
         this.dayUsing = dayUsing;
@@ -19,31 +19,35 @@ public class User {
         this.totalTimeUsed = totalTimeUsed;
     }
 
-    public void setFacilityID(int n){
+    public void setFacilityID(int n) {
         this.FacilityIDNum = n;
     }
 
-    public void setIsUsing(boolean b){
+    public void setIsUsing(boolean b) {
         this.isUsing = b;
     }
 
-    public void setTotalTimeUsed(int n){
+    public void setTotalTimeUsed(int n) {
         this.totalTimeUsed = n;
     }
 
-    public void setDayUsing(String s){
+    public void setDayUsing(String s) {
         this.dayUsing = s;
+    }
+
+    public String getDayUsing() {
+        return dayUsing;
     }
 
     public int getUserID() {
         return this.userID;
     }
 
-    public int getFacilityID(){
+    public int getFacilityID() {
         return this.FacilityIDNum;
     }
 
-    public int getTotalTimeUsed(){
+    public int getTotalTimeUsed() {
         return this.totalTimeUsed;
     }
 
