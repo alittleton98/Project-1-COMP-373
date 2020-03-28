@@ -1,6 +1,6 @@
-package use;
+package main.java.use;
 
-import facility.*;
+import main.java.facility.*;
 import java.util.*;
 
 public class FacilityUseManager implements FacilityUse {

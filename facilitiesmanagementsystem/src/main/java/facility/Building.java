@@ -1,4 +1,4 @@
-package facility;
+package main.java.facility;
 
 public class Building {
     private int BuildingIDNum; // Building Identification number

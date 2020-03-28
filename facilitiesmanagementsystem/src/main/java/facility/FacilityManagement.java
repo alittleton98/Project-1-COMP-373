@@ -1,4 +1,4 @@
-package facility;
+package main.java.facility;
 
 //Facility management interface
 

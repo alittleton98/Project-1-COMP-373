@@ -1,9 +1,9 @@
-package facilitytest;
+package test.java.facilitytest;
 
 import static org.junit.Assert.assertTrue;
 
 import org.junit.*;
-import facility.*;
+import main.java.facility.*;
 
 public class FacilityManagerTest {
     Facility testFacility;

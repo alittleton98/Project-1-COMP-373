@@ -1,7 +1,7 @@
-package maintenance;
+package main.java.maintenance;
 
 import java.util.*;
-import facility.*;
+import main.java.facility.*;
 
 public class FacilityMaintenanceManager implements FacilityMaintenance {
     protected ArrayList<MaintenanceRequest> maintenanceRequestsList;

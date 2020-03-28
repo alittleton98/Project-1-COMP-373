@@ -2,7 +2,7 @@
 //POSSIBLE IMPLIMENTATION
 //UNNECESSARY AS OF 2/22/2020
 
-package use;
+package main.java.use;
 
 public class User {
     private int userID;

@@ -1,8 +1,8 @@
-package facility;
+package main.java.facility;
 
 import java.util.*;
-import maintenance.*;
-import use.*;
+import main.java.maintenance.*;
+import main.java.use.*;
 
 public class Facility {
     private int facilityIDNum;
@@ -11,7 +11,7 @@ public class Facility {
     private ArrayList<Building> buildingCluster;
     private double costToMaintain;
     private boolean inMaintenance;
-    private final int FACILITY_CAPACITY;
+    private int FACILITY_CAPACITY;
     private int employeeCount;
     protected ArrayList<MaintenanceRequest> facilityMaintenanceRequests;
     protected ArrayList<Inspection> facilityInspections;

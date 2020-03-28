@@ -1,4 +1,4 @@
-package maintenance;
+package main.java.maintenance;
 
 public class MaintenanceRequest {
     private int maintReqID;

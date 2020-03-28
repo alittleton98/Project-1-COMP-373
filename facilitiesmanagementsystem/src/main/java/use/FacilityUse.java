@@ -1,6 +1,6 @@
-package use;
+package main.java.use;
 
-import facility.*;
+import main.java.facility.*;
 
 public interface FacilityUse {
     public boolean isInUseDuringInterval(Facility f, String day);

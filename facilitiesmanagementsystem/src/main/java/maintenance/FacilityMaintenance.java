@@ -1,7 +1,7 @@
-package maintenance;
+package main.java.maintenance;
 
 //import faciltiy package
-import facility.*;
+import main.java.facility.*;
 
 //Faciltiy Maintenance interface
 public interface FacilityMaintenance {

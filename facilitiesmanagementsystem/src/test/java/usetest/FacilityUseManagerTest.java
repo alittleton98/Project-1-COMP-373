@@ -1,7 +1,7 @@
-package usetest;
+package test.java.usetest;
 
 import org.junit.*;
-import facility.*;
+import main.java.facility.*;
 
 public class FacilityUseManagerTest {
     Facility f;

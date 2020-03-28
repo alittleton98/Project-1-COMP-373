@@ -1,7 +1,7 @@
-package maintenancetest;
+package test.java.maintenancetest;
 
 import org.junit.*;
-import facility.*;
+import main.java.facility.*;
 
 public class FacilityMaintenanceManagerTest {
     @Test

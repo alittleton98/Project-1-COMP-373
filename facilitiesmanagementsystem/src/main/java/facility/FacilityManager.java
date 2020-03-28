@@ -1,4 +1,4 @@
-package facility;
+package main.java.facility;
 
 import java.util.*;
 
