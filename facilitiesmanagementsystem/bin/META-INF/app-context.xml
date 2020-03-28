@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<description>Wiring the dependencies for the Facility Management System.</description>
+
+	<context:component-scan base-package="main.java" />
+	
+	<bean id="building" class="main.java.facility.Building" scope="prototype"/>
+	<bean id="facility" class="main.java.facility.Facility" scope="prototype"/>
+	<bean id="facilityManager" class="main.java.facility.FacilityManagement" scope="prototype"/>
+    
+    <bean id="facilityMaintenance" class="main.java.maintenance.FacilityMaintenance" scope="prototype"/>
+    <bean id="maintenanceRequest" class="main.java.maintenance.MaintenanceRequest" scope="prototype"/>
+
+    <bean id="facilityUse" class="main.java.use.FacilityUse" scope="prototype"/>
+    <bean id="inspection" class="main.java.use.Inspection" scope="prototype"/>
+    <bean id="user" class="main.java.use.User" scope="prototype"/>
+
+	
+    
+    <bean id="orderDetail" class="com.online.bookstore.model.order.OrderDetailImpl" scope="prototype">
+		<property name="book" ref="book" />
+		<property name="quantity" >
+			<value>0</value>
+		</property>
+	</bean>
+	
+	<bean id="order" class="com.online.bookstore.model.order.OrderImpl" scope="prototype">	
+		<property name="orderDetails">
+			<list/>
+        	<!-- 
+         	<list>
+             	<ref bean="orderDetail" />
+            </list>
+            -->
+         </property>
+	</bean>
+	
+	<bean id="payment" class="com.online.bookstore.model.order.PaymentImpl" scope="prototype">
+		<property name="cardType" >
+			<value>0</value>
+		</property>
+		<property name="cardNumber" >
+			<value>0</value>
+		</property>
+	</bean>
+	
+	<bean id="customer" class="com.online.bookstore.model.customer.CustomerImpl" scope="prototype">
+		<property name="billingAddress" ref="billingAddress" />
+		<property name="shippingAddress" ref="shippingAddress" />
+		<!-- Inject the Order List -->
+        <property name="orders">
+        	<list/>
+        	<!-- 
+        	<list>
+            	<ref bean="order" />
+            </list>
+             -->
+         </property>
+	</bean>
+	
+	<bean id="customerService" class="com.online.bookstore.model.service.CustomerService" scope="prototype">
+		<property name="customer" ref="customer" />
+	</bean>
+	
+</beans>

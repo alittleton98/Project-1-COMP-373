@@ -1,44 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" output="target/classes" path="src/main/java">
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7">
 		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
+			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="src/test/java">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="test" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-13">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
-		<attributes>
-			<attribute name="maven.pomderived" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" path="target/generated-sources/annotations">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="src" output="target/test-classes" path="target/generated-test-sources/test-annotations">
-		<attributes>
-			<attribute name="optional" value="true"/>
-			<attribute name="maven.pomderived" value="true"/>
-			<attribute name="ignore_optional_problems" value="true"/>
-			<attribute name="m2e-apt" value="true"/>
-			<attribute name="test" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="output" path="target/classes"/>
+	<classpathentry kind="lib" path="/facilitiesmanagementsystem/src/META-INF/spring/commons-io-2.4.jar"/>
+	<classpathentry kind="lib" path="/facilitiesmanagementsystem/src/META-INF/spring/commons-logging-1.2.1.1.jar"/>
+	<classpathentry kind="lib" path="/facilitiesmanagementsystem/src/META-INF/spring/spring-aop-5.2.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/facilitiesmanagementsystem/src/META-INF/spring/spring-beans-5.2.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/facilitiesmanagementsystem/src/META-INF/spring/spring-context-5.2.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/facilitiesmanagementsystem/src/META-INF/spring/spring-core-5.2.3.RELEASE.jar"/>
+	<classpathentry kind="lib" path="/facilitiesmanagementsystem/src/META-INF/spring/spring-expression-5.2.3.RELEASE.jar"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>
