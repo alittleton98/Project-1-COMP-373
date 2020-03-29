@@ -10,61 +10,56 @@
 	<context:component-scan base-package="main.java" />
 	
 	<bean id="building" class="main.java.facility.Building" scope="prototype"/>
-	<bean id="facility" class="main.java.facility.Facility" scope="prototype"/>
-	<bean id="facilityManager" class="main.java.facility.FacilityManagement" scope="prototype"/>
+	<bean id="facility" class="main.java.facility.Facility" scope="prototype">
+		<property name = "buildingCluster">
+			<list>
+            	<ref bean="building" />
+            </list>
+		</property>
+		<property name = "facilityMaintenanceRequests">
+			<list>
+            	<ref bean="maintenanceRequest" />
+            </list>
+		</property>
+		<property name = "facilityInspections">
+			<list>
+            	<ref bean="inspection" />
+            </list>
+		</property>
+	</bean>
+	
+	<bean id="facilityManager" class="main.java.facility.FacilityManagement" scope="prototype">
+		<property name = "FacilitiesList">
+			<list>
+            	<ref bean="facility" />
+            </list>
+		</property>
+		<property name = "availableFacilities">
+			<list>
+            	<ref bean="facility" />
+            </list>
+		</property>
+	</bean>
     
-    <bean id="facilityMaintenance" class="main.java.maintenance.FacilityMaintenance" scope="prototype"/>
+    <bean id="facilityMaintenance" class="main.java.maintenance.FacilityMaintenance" scope="prototype">
+		<property name = "maintenanceRequestsList">
+			<list>
+            	<ref bean="maintenanceRequest" />
+            </list>
+		</property>
+	</bean>
+
     <bean id="maintenanceRequest" class="main.java.maintenance.MaintenanceRequest" scope="prototype"/>
 
     <bean id="facilityUse" class="main.java.use.FacilityUse" scope="prototype"/>
+		<property name = "userList">
+			<list>
+            	<ref bean="user" />
+            </list>
+		</property>
+	</bean>
+	
     <bean id="inspection" class="main.java.use.Inspection" scope="prototype"/>
     <bean id="user" class="main.java.use.User" scope="prototype"/>
-
-	
-    
-    <bean id="orderDetail" class="com.online.bookstore.model.order.OrderDetailImpl" scope="prototype">
-		<property name="book" ref="book" />
-		<property name="quantity" >
-			<value>0</value>
-		</property>
-	</bean>
-	
-	<bean id="order" class="com.online.bookstore.model.order.OrderImpl" scope="prototype">	
-		<property name="orderDetails">
-			<list/>
-        	<!-- 
-         	<list>
-             	<ref bean="orderDetail" />
-            </list>
-            -->
-         </property>
-	</bean>
-	
-	<bean id="payment" class="com.online.bookstore.model.order.PaymentImpl" scope="prototype">
-		<property name="cardType" >
-			<value>0</value>
-		</property>
-		<property name="cardNumber" >
-			<value>0</value>
-		</property>
-	</bean>
-	
-	<bean id="customer" class="com.online.bookstore.model.customer.CustomerImpl" scope="prototype">
-		<property name="billingAddress" ref="billingAddress" />
-		<property name="shippingAddress" ref="shippingAddress" />
-		<!-- Inject the Order List -->
-        <property name="orders">
-        	<list/>
-        	<!-- 
-        	<list>
-            	<ref bean="order" />
-            </list>
-             -->
-         </property>
-	</bean>
-	
-	<bean id="customerService" class="com.online.bookstore.model.service.CustomerService" scope="prototype">
-		<property name="customer" ref="customer" />
-	</bean>
 	
 </beans>
