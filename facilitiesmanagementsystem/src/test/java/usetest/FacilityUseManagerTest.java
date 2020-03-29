@@ -24,7 +24,7 @@ public class FacilityUseManagerTest {
     }
 
     @Test
-    public String[] listInspections() {
+    public void listInspections() {
 
     }
 

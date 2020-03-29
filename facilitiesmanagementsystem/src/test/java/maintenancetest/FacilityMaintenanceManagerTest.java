@@ -15,17 +15,17 @@ public class FacilityMaintenanceManagerTest {
     }
 
     @Test
-    public double calcMaintenanceCostForFacility() {
+    public void calcMaintenanceCostForFacility() {
 
     }
 
     @Test
-    public float calcProblemRateForFacility() {
+    public void calcProblemRateForFacility() {
 
     }
 
     @Test
-    public int calcDownTimeForFacility(Facility f) {
+    public void calcDownTimeForFacility(Facility f) {
 
     }
 
