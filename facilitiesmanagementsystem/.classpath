@@ -14,6 +14,7 @@
 	<classpathentry kind="lib" path="src/META-INF/spring/spring-core-5.2.3.RELEASE.jar"/>
 	<classpathentry kind="lib" path="src/META-INF/spring/spring-expression-5.2.3.RELEASE.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
