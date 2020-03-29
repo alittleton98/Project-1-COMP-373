@@ -7,7 +7,7 @@ public class MaintenanceRequest {
     private int daysRequired;
     protected boolean isCompleted;
 
-    MaintenanceRequest(int requestID, int fID, String request, int days) {
+    public MaintenanceRequest(int requestID, int fID, String request, int days) {
         maintReqID = requestID;
         FacilityIDNum = fID;
         requestReason = request;

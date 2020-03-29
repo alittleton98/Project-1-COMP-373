@@ -11,7 +11,7 @@ public class User {
     private boolean isUsing;
     private int totalTimeUsed;
 
-    User(int id, int facilID, String dayUsing, int totalTimeUsed) {
+    public User(int id, int facilID, String dayUsing, int totalTimeUsed) {
         this.userID = id;
         this.FacilityIDNum = facilID;
         this.dayUsing = dayUsing;
