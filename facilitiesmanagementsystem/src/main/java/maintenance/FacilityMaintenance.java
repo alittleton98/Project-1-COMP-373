@@ -23,4 +23,6 @@ public interface FacilityMaintenance {
 
     public void listFacilityProblems(Facility f);
 
+    public void addMaintenanceRequest(Facility f, MaintenanceRequest m);
+
 }

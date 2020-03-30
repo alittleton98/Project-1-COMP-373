@@ -29,13 +29,12 @@ public class Facility {
     }
 
     // constructor for faciltiy object
-    public Facility(int fID, String loc, boolean useCond, Building b, double cost, boolean maint, int cap,
-            int empCount) {
+    public Facility(int fID, String loc, boolean useCond, double cost, boolean maint, int cap, int empCount) {
         facilityIDNum = fID;
         facilityLocation = loc;
         inUse = useCond;
         buildingCluster = new ArrayList<Building>();
-        buildingCluster.add(b);
+        // buildingCluster.add(b);
         costToMaintain = cost;
         inMaintenance = maint;
         FACILITY_CAPACITY = cap;
