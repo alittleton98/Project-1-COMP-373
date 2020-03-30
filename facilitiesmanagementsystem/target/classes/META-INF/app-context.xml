@@ -51,7 +51,7 @@
 
     <bean id="maintenanceRequest" class="main.java.maintenance.MaintenanceRequest" scope="prototype"/>
 
-    <bean id="facilityUse" class="main.java.use.FacilityUse" scope="prototype"/>
+    <bean id="facilityUse" class="main.java.use.FacilityUse" scope="prototype">
 		<property name = "userList">
 			<list>
             	<ref bean="user" />

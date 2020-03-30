@@ -1,6 +1,6 @@
 package test.java.facilitytest;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import org.junit.*;
 import main.java.facility.*;
