@@ -77,4 +77,8 @@ public class FacilityMaintenanceManager implements FacilityMaintenance {
         requestCount++;
         f.addMaintenanceRequest(m);
     }
+
+    public ArrayList<MaintenanceRequest> getMaintenanceRequests() {
+        return maintenanceRequestsList;
+    }
 }

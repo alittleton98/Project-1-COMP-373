@@ -2,6 +2,7 @@ package main.java.maintenance;
 
 //import faciltiy package
 import main.java.facility.*;
+import java.util.*;
 
 //Faciltiy Maintenance interface
 public interface FacilityMaintenance {
@@ -24,5 +25,7 @@ public interface FacilityMaintenance {
     public void listFacilityProblems(Facility f);
 
     public void addMaintenanceRequest(Facility f, MaintenanceRequest m);
+
+    public ArrayList<MaintenanceRequest> getMaintenanceRequests();
 
 }

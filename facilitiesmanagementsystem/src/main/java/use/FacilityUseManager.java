@@ -56,4 +56,7 @@ public class FacilityUseManager implements FacilityUse {
         return finalrate;
     }
 
+    public ArrayList<User> getUsers() {
+        return userList;
+    }
 }

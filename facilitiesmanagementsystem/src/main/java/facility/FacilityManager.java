@@ -81,8 +81,15 @@ public class FacilityManager implements FacilityManagement {
 
             case "Employee Count":
                 System.out.print("Please enter the number of new employees added: ");
-                f.addEmployees(user.nextInt());
-                System.out.println("Facility employee count is now " + f.getEmployeeCount());
+                int newCount = user.nextInt();
+                do {
+                    if (f.getEmployeeCount() > f.getCapacityCount()) {
+                        System.out.println("EMPLOYEE COUNT EXCEEDS FACILITY CAPACITY");
+                    } else {
+                        f.addEmployees(newCount);
+                        System.out.println("Facility employee count is now " + f.getEmployeeCount());
+                    }
+                } while (newCount > f.getCapacityCount());
 
             default:
                 System.out.println("Nothing was changed");
