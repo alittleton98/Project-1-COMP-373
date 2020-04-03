@@ -14,7 +14,7 @@ public class FacilityMaintenanceManagerTest {
 
     @Test
     public void makeMaintenanceRequest() {
-        testMaintenanceManager.makeMaintenanceRequest(testFacility);
+        testMaintenanceManager.makeMaintenanceRequest(testFacility, testFacility.getFacilityID(), "Testing", 1);
         assertTrue(testFacility.getMaintList().size() > 0);
     }
 

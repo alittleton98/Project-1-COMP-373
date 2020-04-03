@@ -28,5 +28,7 @@ public class FacilityManagementSystem {
         facilityMaintenance.addMaintenanceRequest(facility, cleaningMRequest);
 
         facility.printFacilityInfo();
+
+        // TODO Add presentation logic here!
     }
 }

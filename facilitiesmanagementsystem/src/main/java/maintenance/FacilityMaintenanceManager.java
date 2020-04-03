@@ -10,7 +10,7 @@ public class FacilityMaintenanceManager implements FacilityMaintenance {
     // TODO: SPLIT MAINTENANCE LISTS TO ACTIVE AND INACTIVE FOR EACH FACILITY
 
     // Function to generate a maintenance request
-    public void makeMaintenanceRequest(Facility f) {
+    public void makeMaintenanceRequest(Facility f, int facilityID, String requestDesc, int daysReq) {
         int fID;
         String request;
         int days;
