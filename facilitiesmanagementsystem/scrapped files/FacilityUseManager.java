@@ -1,6 +1,7 @@
 package main.java.use;
 
 import main.java.facility.*;
+import main.java.maintenance.*;
 import java.util.*;
 
 public class FacilityUseManager implements FacilityUse {
