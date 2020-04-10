@@ -17,3 +17,6 @@ Designed with 3 Packages:
 Bridge Implementation added by abstracting maintenance and use interfaces to the FacilityOperations class.  
 FacilityOperations is used by Facility and Client to perform and maintenace or use management methods rather than having to call them separately.
   
+Observer implementation   
+
+*UML Updated to represent changes*
