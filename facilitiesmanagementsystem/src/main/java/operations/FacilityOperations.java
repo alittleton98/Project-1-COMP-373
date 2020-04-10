@@ -73,9 +73,9 @@ public class FacilityOperations extends Observable implements FacilityUse, Facil
         int days;
         System.out.println("Please enter the follow information: ");
         System.out.print("Facility ID: ");
-        fID = user.nextInt();
+        fID = facilityID;
         System.out.print("Request description: ");
-        request = user.nextLine();
+        request = requestDesc;
         System.out.print("Days required: ");
         days = user.nextInt();
         MaintenanceRequest m = new MaintenanceRequest(this.maintenanceRequestsList.size() + 1, fID, request, days);
