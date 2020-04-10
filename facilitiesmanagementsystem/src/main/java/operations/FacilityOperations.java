@@ -13,7 +13,7 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance {
     private int userCount = 0;
     protected ArrayList<MaintenanceRequest> maintenanceRequestsList;
     private int requestCount = 0;
-    Scanner user = new Scanner(System.in);
+    // Scanner user = new Scanner(System.in);
 
     public boolean isInUseDuringInterval(Facility f, String day) {
 
@@ -75,11 +75,11 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance {
         int days;
         System.out.println("Please enter the follow information: ");
         System.out.print("Facility ID: ");
-        fID = user.nextInt();
+        fID = facilityID;
         System.out.print("Request description: ");
-        request = user.nextLine();
+        request = requestDesc;
         System.out.print("Days required: ");
-        days = user.nextInt();
+        days = daysReq;
         MaintenanceRequest m = new MaintenanceRequest(requestCount + 1, fID, request, days);
         maintenanceRequestsList.add(m);
         requestCount++;

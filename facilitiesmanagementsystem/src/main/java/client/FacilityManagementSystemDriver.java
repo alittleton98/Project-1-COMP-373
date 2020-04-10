@@ -9,7 +9,7 @@ import main.java.facility.*;
 import main.java.maintenance.*;
 import main.java.use.*;
 
-public class FacilityManagementSystem {
+public class FacilityManagementSystemDriver {
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/app-context.xml");
