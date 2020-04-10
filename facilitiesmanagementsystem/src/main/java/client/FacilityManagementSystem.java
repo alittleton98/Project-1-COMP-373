@@ -16,17 +16,22 @@ public class FacilityManagementSystem {
         System.out.println("***************** Application Context instantiated! ******************");
 
         // Testing package imports
-        Facility facility = new Facility(6107, "Chicago", true, 100, false, 100, 17);
-        MaintenanceRequest cleaningMRequest = new MaintenanceRequest(0, 0, "Cleaning", 1);
-        User u = new User(0, 0, "Wednesday", 7);
+        Facility facil1 = (Facility) context.getBean("facility");
+        facil1 = new Facility(6107, "Chicago", true, 100, false, 100, 17);
+        
+        MaintenanceRequest cleaningMRequest = (MaintenanceRequest) context.getBean("maintenanceRequest");
+        cleaningMRequest = new MaintenanceRequest(0, 0, "Cleaning", 1);
+        
+        User user1 = (User) context.getBean("user");
+        user1 = new User(0, 0, "Wednesday", 7);
 
         // Following line causes Bean Instantiation Exception
         FacilityManager facilityManager = (FacilityManager) context.getBean("facilityManager");
-        facilityManager.addNewFacility(facility);
+        facilityManager.addNewFacility(facil1);
 
         FacilityMaintenance facilityMaintenance = (FacilityMaintenance) context.getBean("facilityMaintenance");
-        facilityMaintenance.addMaintenanceRequest(facility, cleaningMRequest);
+        facilityMaintenance.addMaintenanceRequest(facil1, cleaningMRequest);
 
-        facility.printFacilityInfo();
+        facil1.printFacilityInfo();
     }
 }
