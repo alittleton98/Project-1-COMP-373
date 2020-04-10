@@ -8,13 +8,11 @@ import java.util.*;
 //Bridge pattern implementation
 //FacilityOperations connects to FacilityManagement
 
-public class FacilityOperations implements FacilityUse, FacilityMaintenance {
+public class FacilityOperations extends Observable implements FacilityUse, FacilityMaintenance   {
     protected ArrayList<User> userList;
-    private int userCount = 0;
     protected ArrayList<MaintenanceRequest> maintenanceRequestsList;
-    private int requestCount = 0;
     Scanner user = new Scanner(System.in);
-
+    
     public boolean isInUseDuringInterval(Facility f, String day) {
 
         // check if userList date is already taken
@@ -32,8 +30,8 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance {
     public void assignFacilityToUse(Facility f, User u) {
 
         // assign a facility to a user
-
         u.setFacilityID(f.getFacilityID());
+        f.setFacilityUseCondition(true);
         userList.add(u);
     }
 
@@ -80,10 +78,12 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance {
         request = user.nextLine();
         System.out.print("Days required: ");
         days = user.nextInt();
-        MaintenanceRequest m = new MaintenanceRequest(requestCount + 1, fID, request, days);
-        maintenanceRequestsList.add(m);
-        requestCount++;
-        f.addMaintenanceRequest(m);
+        MaintenanceRequest m = new MaintenanceRequest(this.maintenanceRequestsList.size() + 1, fID, request, days);
+        this.maintenanceRequestsList.add(m);
+        //OBSERVABLE
+        setChanged();
+        // Pass data of newly created MaintenanceRequest to observer
+        notifyObservers(m);
     }
 
     public void scheduleMaintenance() {
@@ -113,31 +113,16 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance {
     }
 
     // Lists Maintenance requests for a specific facility
-    public void listFacilityMaintRequests(Facility f) {
-        f.listMaintenanceRequests();
+    public ArrayList<MaintenanceRequest> listFacilityMaintRequests(Facility f) {
+        return f.getMaintList();
     }
 
     // Lists all current maintenance requests.
-    public void listMaintenance() {
-        for (int i = 0; i < maintenanceRequestsList.size(); i++) {
-            if (maintenanceRequestsList.get(i).getCompletionStatus()) {
-                maintenanceRequestsList.get(i).printRequestInfo();
-                System.out.println();
-            }
-        }
+    public ArrayList<MaintenanceRequest> listMaintenance() {
+        return this.maintenanceRequestsList;
     }
 
     public void listFacilityProblems(Facility f) {
         // unsure
-    }
-
-    public void addMaintenanceRequest(Facility f, MaintenanceRequest m) {
-        maintenanceRequestsList.add(m);
-        requestCount++;
-        f.addMaintenanceRequest(m);
-    }
-
-    public ArrayList<MaintenanceRequest> getMaintenanceRequests() {
-        return maintenanceRequestsList;
     }
 }
