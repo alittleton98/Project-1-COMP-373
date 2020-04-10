@@ -6,7 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import main.java.facility.*;
 //import main.java.client.*; unnnecessary 
-import main.java.maintenance.*;
+import main.java.maintenance.*; 
+import main.java.operations.FacilityOperations;
 import main.java.use.*;
 
 public class FacilityManagementSystemDriver {
@@ -17,15 +18,16 @@ public class FacilityManagementSystemDriver {
 
         // Testing package imports
         Facility facility = new Facility(6107, "Chicago", true, 100, false, 100, 17);
-        MaintenanceRequest cleaningMRequest = new MaintenanceRequest(0, 0, "Cleaning", 1);
         User u = new User(0, 0, "Wednesday", 7);
 
         // Following line causes Bean Instantiation Exception
         FacilityManager facilityManager = (FacilityManager) context.getBean("facilityManager");
         facilityManager.addNewFacility(facility);
 
-        FacilityMaintenance facilityMaintenance = (FacilityMaintenance) context.getBean("facilityMaintenance");
-        facilityMaintenance.addMaintenanceRequest(facility, cleaningMRequest);
+        //attaching facility as an observer to operationsManager
+        FacilityOperations operationsManager = new FacilityOperations();
+        operationsManager.attach(facility);
+        operationsManager.makeMaintenanceRequest(facility, facility.getFacilityID(), "Deep Cleaning", 1);
 
         facility.printFacilityInfo();
 
