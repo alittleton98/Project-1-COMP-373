@@ -19,4 +19,4 @@ FacilityOperations is used by Facility and Client to perform and maintenace or u
   
 Observer implementation   
 
-*UML Updated to represent changes*
+*UML Updated to reflect changes*
