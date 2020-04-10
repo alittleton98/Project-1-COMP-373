@@ -1,17 +1,37 @@
 package main.java.operations;
 
 import main.java.facility.*;
+import main.java.facility.Observer;
 import main.java.maintenance.*;
 import main.java.use.*;
 import java.util.*;
 
+
 //Bridge pattern implementation
 //FacilityOperations connects to FacilityManagement
 
-public class FacilityOperations extends Observable implements FacilityUse, FacilityMaintenance   {
+public class FacilityOperations implements FacilityUse, FacilityMaintenance, Subject   {
     protected ArrayList<User> userList;
     protected ArrayList<MaintenanceRequest> maintenanceRequestsList;
+    private ArrayList<Observer> observers;
     Scanner user = new Scanner(System.in);
+    
+    @Override
+    public void attach(Observer o){
+        this.observers.add(o);
+    }
+
+    @Override
+    public void detach(Observer o){
+        this.observers.remove(o);
+    }
+
+    @Override
+    public void notifyUpdate(MaintenanceRequest m){
+        for (Observer o: observers){
+            o.update(m);
+        }
+    }
     
     public boolean isInUseDuringInterval(Facility f, String day) {
 
@@ -80,10 +100,7 @@ public class FacilityOperations extends Observable implements FacilityUse, Facil
         days = user.nextInt();
         MaintenanceRequest m = new MaintenanceRequest(this.maintenanceRequestsList.size() + 1, fID, request, days);
         this.maintenanceRequestsList.add(m);
-        //OBSERVABLE
-        setChanged();
-        // Pass data of newly created MaintenanceRequest to observer
-        notifyObservers(m);
+        notifyUpdate(m);
     }
 
     public void scheduleMaintenance() {
