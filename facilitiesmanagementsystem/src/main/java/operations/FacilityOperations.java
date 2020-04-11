@@ -87,20 +87,11 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance, Sub
     }
 
     // Function to generate a maintenance request
-    public void makeMaintenanceRequest(Facility f, int facilityID, String requestDesc, int daysReq) {
-        int fID;
-        String request;
-        int days;
-        System.out.println("Please enter the follow information: ");
-        System.out.print("Facility ID: ");
-        fID = facilityID;
-        System.out.print("Request description: ");
-        request = requestDesc;
-        System.out.print("Days required: ");
-        days = user.nextInt();
-        MaintenanceRequest m = new MaintenanceRequest(this.maintenanceRequestsList.size() + 1, fID, request, days);
+    public MaintenanceRequest makeMaintenanceRequest(Facility f, String requestDesc, int daysReq) {
+        MaintenanceRequest m = new MaintenanceRequest(this.maintenanceRequestsList.size() + 1, f.getFacilityID(), requestDesc, daysReq);
         this.maintenanceRequestsList.add(m);
         notifyUpdate(m);
+        return m;
     }
 
     public void scheduleMaintenance() {

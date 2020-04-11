@@ -24,7 +24,7 @@ public class FacilityOperationsTest {
 
     @Test
     public void makeMaintenanceRequest() {
-        testFacilityOperations.makeMaintenanceRequest(testFacility, testFacility.getFacilityID(), "Testing", 1);
+        testFacilityOperations.makeMaintenanceRequest(testFacility, "Testing", 1);
         assertTrue(testFacility.getMaintList().size() > 0);
     }
 
@@ -34,10 +34,4 @@ public class FacilityOperationsTest {
         assertTrue(testFacilityOperations.calcMaintenanceCostForFacility(testFacility) == testFacilityMaintCost);
     }
 
-    @Test
-    public void addMaintRequestTest() {
-        testFacilityOperations.addMaintenanceRequest(testFacility, m);
-        assertTrue(
-                testFacility.getMaintList().contains(m) && testFacilityOperations.getMaintenanceRequests().contains(m));
-    }
 }

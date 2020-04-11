@@ -26,9 +26,10 @@ public class FacilityManagementSystemDriver {
         facilityManager.addNewFacility(facility);
 
         //attaching facility as an observer to operationsManager
-        FacilityOperations operationsManager = new FacilityOperations();
+        FacilityOperations operationsManager = (FacilityOperations) context.getBean("facilityOperations");
+        operationsManager = new FacilityOperations();
         operationsManager.attach(facility);
-        operationsManager.makeMaintenanceRequest(facility, facility.getFacilityID(), "Deep Cleaning", 1);
+        operationsManager.makeMaintenanceRequest(facility, "Deep Cleaning", 1);
 
         facility.printFacilityInfo();
 

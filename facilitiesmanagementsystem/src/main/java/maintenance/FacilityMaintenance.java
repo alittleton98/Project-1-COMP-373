@@ -6,7 +6,7 @@ import java.util.*;
 
 //Faciltiy Maintenance interface
 public interface FacilityMaintenance {
-    public void makeMaintenanceRequest(Facility f, int facilityID, String requestDesc, int daysReq);
+    public MaintenanceRequest makeMaintenanceRequest(Facility f, String requestDesc, int daysReq);
 
     // public boolean facilityExists(int fID);
 
