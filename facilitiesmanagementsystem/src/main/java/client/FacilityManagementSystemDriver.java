@@ -17,7 +17,8 @@ public class FacilityManagementSystemDriver {
         System.out.println("***************** Application Context instantiated! ******************");
 
         // Testing package imports
-        Facility facility = new Facility(6107, "Chicago", true, 100, false, 100, 17);
+        Facility facility = (Facility) context.getBean("facility");
+        facility = new Facility(6107, "Chicago", true, 100, false, 100, 17);
         User u = new User(0, 0, "Wednesday", 7);
 
         // Following line causes Bean Instantiation Exception
