@@ -6,7 +6,7 @@ import java.util.*;
 
 //Faciltiy Maintenance interface
 public interface FacilityMaintenance {
-    public void makeMaintenanceRequest(Facility f);
+    public MaintenanceRequest makeMaintenanceRequest(Facility f, String requestDesc, int daysReq);
 
     // public boolean facilityExists(int fID);
 
@@ -18,14 +18,10 @@ public interface FacilityMaintenance {
 
     public int calcDownTimeForFacility(Facility f);
 
-    public void listFacilityMaintRequests(Facility f);
+    public ArrayList<MaintenanceRequest> listFacilityMaintRequests(Facility f);
 
-    public void listMaintenance();
+    public ArrayList<MaintenanceRequest> listMaintenance();
 
     public void listFacilityProblems(Facility f);
-
-    public void addMaintenanceRequest(Facility f, MaintenanceRequest m);
-
-    public ArrayList<MaintenanceRequest> getMaintenanceRequests();
 
 }

@@ -19,6 +19,10 @@ public class MaintenanceRequest {
         FacilityIDNum = n;
     }
 
+    public int getFacilityID(){
+        return this.FacilityIDNum;
+    }
+
     public void setRequestReason(String s) {
         requestReason = s;
     }

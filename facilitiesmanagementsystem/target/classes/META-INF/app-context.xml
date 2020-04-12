@@ -40,24 +40,30 @@
             </list>
 		</property>
 	</bean>
-    
-    <bean id="facilityMaintenance" class="main.java.maintenance.FacilityMaintenanceManager" scope="prototype">
-		<property name = "maintenanceRequestsList">
-			<list>
-            	<ref bean="maintenanceRequest" />
-            </list>
-		</property>
-	</bean>
 
-    <bean id="maintenanceRequest" class="main.java.maintenance.MaintenanceRequest" scope="prototype"/>
-
-    <bean id="facilityUse" class="main.java.use.FacilityUseManager" scope="prototype">
+	<bean id="observer" class="main.java.facility.Observer" scope="prototype"/>
+	
+	<bean id="facilityOperations" class="main.java.operations.FacilityOperations" scope="prototype">
 		<property name = "userList">
 			<list>
             	<ref bean="user" />
             </list>
 		</property>
+		<property name = "maintenanceRequestsList">
+			<list>
+            	<ref bean="maintenanceRequest" />
+            </list>
+		</property>
+		<property name = "observers">
+			<list>
+            	<ref bean="observer" />
+            </list>
+		</property>
 	</bean>
+
+	<bean id="subject" class="main.java.operations.Subject" scope="prototype"/>
+
+    <bean id="maintenanceRequest" class="main.java.maintenance.MaintenanceRequest" scope="prototype"/>
 	
     <bean id="inspection" class="main.java.use.Inspection" scope="prototype"/>
     <bean id="user" class="main.java.use.User" scope="prototype"/>

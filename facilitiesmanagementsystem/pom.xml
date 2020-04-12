@@ -5,7 +5,7 @@
 
   <groupId>FacilitiesManagementSystem</groupId>
   <artifactId>facilitiesmanagementsystem</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
 
   <name>facilitiesmanagementsystem</name>
   <url>https://github.com/alittleton98/Project-1-COMP-373</url>
@@ -29,7 +29,7 @@
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>5.2.3.RELEASE</version>         
+      <version>5.2.3.RELEASE</version>
     </dependency>
 
   </dependencies>

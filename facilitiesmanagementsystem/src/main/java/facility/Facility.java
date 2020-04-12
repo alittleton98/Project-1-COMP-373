@@ -4,7 +4,7 @@ import java.util.*;
 import main.java.maintenance.*;
 import main.java.use.*;
 
-public class Facility {
+public class Facility implements Observer {
     private int facilityIDNum;
     private String facilityLocation;
     private boolean inUse;
@@ -122,9 +122,12 @@ public class Facility {
         return facilityMaintenanceRequests;
     }
 
-    // Function to add a maintenacne request to the facility
-    public void addMaintenanceRequest(MaintenanceRequest m) {
-        facilityMaintenanceRequests.add(m);
+    //OBSERVER IMPL. to set maintenance requests based on observing FacilityOperations
+    @Override
+    public void update(MaintenanceRequest maintenance){
+        if (maintenance.getFacilityID() == this.facilityIDNum) {
+            this.facilityMaintenanceRequests.add(maintenance);
+        }
     }
 
     // Function to list all maintenance requests at the selected faciltiy
