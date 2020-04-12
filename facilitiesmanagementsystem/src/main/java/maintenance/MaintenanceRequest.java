@@ -7,12 +7,20 @@ public class MaintenanceRequest {
     private int daysRequired;
     protected boolean isCompleted;
 
+    public MaintenanceRequest(){
+        this.maintReqID = 0;
+        this.FacilityIDNum = 0;
+        this.requestReason = "Undefined";
+        this.daysRequired = 0;
+        this.isCompleted = false;
+    }
+    
     public MaintenanceRequest(int requestID, int fID, String request, int days) {
-        maintReqID = requestID;
-        FacilityIDNum = fID;
-        requestReason = request;
-        daysRequired = days;
-        isCompleted = false;
+        this.maintReqID = requestID;
+        this.FacilityIDNum = fID;
+        this.requestReason = request;
+        this.daysRequired = days;
+        this.isCompleted = false;
     }
 
     public void setFacilityID(int n) {

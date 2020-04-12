@@ -18,31 +18,31 @@ public class Facility implements Observer {
 
     // Default constructor for facility object
     public Facility() {
-        facilityIDNum = 0;
-        facilityLocation = "";
-        inUse = false;
-        buildingCluster = new ArrayList<Building>();
-        costToMaintain = 1;
-        inMaintenance = false;
-        FACILITY_CAPACITY = 100;
-        employeeCount = 1;
+        this.facilityIDNum = 0;
+        this.facilityLocation = "";
+        this.inUse = false;
+        this.buildingCluster = new ArrayList<Building>();
+        this.costToMaintain = 1;
+        this.inMaintenance = false;
+        this.FACILITY_CAPACITY = 100;
+        this.employeeCount = 1;
     }
 
     // constructor for faciltiy object
     public Facility(int fID, String loc, boolean useCond, double cost, boolean maint, int cap, int empCount) {
-        facilityIDNum = fID;
-        facilityLocation = loc;
-        inUse = useCond;
-        buildingCluster = new ArrayList<Building>();
+        this.facilityIDNum = fID;
+        this.facilityLocation = loc;
+        this.inUse = useCond;
+        this.buildingCluster = new ArrayList<Building>();
         // buildingCluster.add(b);
-        costToMaintain = cost;
-        inMaintenance = maint;
-        FACILITY_CAPACITY = cap;
-        employeeCount = empCount;
+        this.costToMaintain = cost;
+        this.inMaintenance = maint;
+        this.FACILITY_CAPACITY = cap;
+        this.employeeCount = empCount;
     }
 
     public void setFacilityID(int n) {
-        facilityIDNum = n;
+        this.facilityIDNum = n;
     }
 
     public int getFacilityID() {
@@ -50,7 +50,7 @@ public class Facility implements Observer {
     }
 
     public void setFacilityLocation(String loc) {
-        facilityLocation = loc;
+        this.facilityLocation = loc;
     }
 
     public String getFacilityLocation() {
@@ -58,7 +58,7 @@ public class Facility implements Observer {
     }
 
     public void setFacilityUseCondition(boolean b) {
-        inUse = b;
+        this.inUse = b;
     }
 
     public boolean getFacilityUseCondition() {
@@ -66,7 +66,7 @@ public class Facility implements Observer {
     }
 
     public void setFacilityMaintenanceCost(double n) {
-        costToMaintain = n;
+        this.costToMaintain = n;
     }
 
     public double getFacilityMaintenanceCost() {
@@ -74,7 +74,7 @@ public class Facility implements Observer {
     }
 
     public void setFacilityMaintenanceStatus(boolean b) {
-        inMaintenance = b;
+        this.inMaintenance = b;
     }
 
     public boolean getFacilityMaintenanceStatus() {
@@ -83,7 +83,7 @@ public class Facility implements Observer {
 
     public void addInspection() {
         Inspection i = new Inspection(this.facilityIDNum);
-        facilityInspections.add(i);
+        this.facilityInspections.add(i);
     }
 
     public ArrayList<Inspection> getInspections() {
@@ -91,13 +91,17 @@ public class Facility implements Observer {
     }
 
     // Function to add buildings to facility
-    public void addBuilding(Building b) {
-        buildingCluster.add(b);
+    public void setBuildingCluster(Building b) {
+        this.buildingCluster.add(b);
+    }
+
+    public ArrayList<Building> getBuildingCluster(){
+        return this.buildingCluster;
     }
 
     // Function to add any given number of employees to facility
     public void addEmployees(int n) {
-        employeeCount = employeeCount + n;
+        this.employeeCount = employeeCount + n;
     }
 
     public void setEmployeeCount(int n) {

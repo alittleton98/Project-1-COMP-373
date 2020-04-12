@@ -16,6 +16,13 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance, Sub
     private ArrayList<Observer> observers;
     Scanner user = new Scanner(System.in);
     
+    public FacilityOperations(){
+        this.userList = new ArrayList<User>();
+        this.maintenanceRequestsList = new ArrayList<MaintenanceRequest>();
+        this.observers = new ArrayList<Observer>();
+    }
+    
+    
     @Override
     public void attach(Observer o){
         this.observers.add(o);

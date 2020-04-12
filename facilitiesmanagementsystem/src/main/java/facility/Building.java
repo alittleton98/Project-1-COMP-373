@@ -1,5 +1,8 @@
 package main.java.facility;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Building {
     private int BuildingIDNum; // Building Identification number
     private int facilityIDNum; // Facility Identification number
@@ -13,7 +16,7 @@ public class Building {
     }
 
     public void setBuildingID(int n) {
-        BuildingIDNum = n;
+        this.BuildingIDNum = n;
     }
 
     public int getBuildingID() {
@@ -21,7 +24,7 @@ public class Building {
     }
 
     public void setFacilityID(int n) {
-        facilityIDNum = n;
+        this.facilityIDNum = n;
     }
 
     public int getFacilityID() {
@@ -29,7 +32,7 @@ public class Building {
     }
 
     public void setBuildingService(String buildServ) {
-        buildingService = buildServ;
+        this.buildingService = buildServ;
     }
 
     public String getBuildingService() {

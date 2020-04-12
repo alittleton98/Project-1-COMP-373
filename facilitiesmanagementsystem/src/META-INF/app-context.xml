@@ -2,8 +2,10 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd http://www.springframework.org/schema/util
+                    http://www.springframework.org/schema/util/spring-util-2.5.xsd">
 
 	<description>Wiring the dependencies for the Facility Management System.</description>
 
@@ -12,9 +14,9 @@
 	<bean id="building" class="main.java.facility.Building" scope="prototype"/>
 	<bean id="facility" class="main.java.facility.Facility" scope="prototype">
 		<property name = "buildingCluster">
-			<list>
-            	<ref bean="building" />
-            </list>
+			<util:list list-class="java.util.ArrayList" value-type="main.java.facility.Building">
+    			<ref bean="building" />
+			</util:list>
 		</property>
 		<property name = "facilityMaintenanceRequests">
 			<list>

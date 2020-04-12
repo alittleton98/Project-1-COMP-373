@@ -11,6 +11,13 @@ public class FacilityManager implements FacilityManagement {
     Scanner user = new Scanner(System.in);
 
     // Function to list all available facilities from the FacilitiesList Arraylist
+    
+    public FacilityManager(){
+        this.FacilitiesList = new ArrayList<Facility>();
+        this.availableFacilities = new ArrayList<Facility>();
+    }
+    
+    
     public void listAvailableFacilities() {
         for (int i = 0; i < availableFacilities.size(); i++) {
             if (availableFacilities.get(i).getFacilityUseCondition() == false) {
@@ -35,7 +42,7 @@ public class FacilityManager implements FacilityManagement {
 
     // Adds new facility to FacilitiesList arraylist
     public void addNewFacility(Facility f) {
-        FacilitiesList.add(f);
+        this.FacilitiesList.add(f);
     }
 
     // TODO fix presentation logic

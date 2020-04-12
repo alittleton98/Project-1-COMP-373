@@ -17,19 +17,31 @@ public class FacilityManagementSystemDriver {
         System.out.println("***************** Application Context instantiated! ******************");
 
         // Testing package imports
+        Building building1 = (Building) context.getBean("building");
+        building1 = new Building();
+        building1.setBuildingID(001);
+        building1.setFacilityID(6107);
+        building1.setBuildingService("IT");
+
         Facility facility = (Facility) context.getBean("facility");
-        facility = new Facility(6107, "Chicago", true, 100, false, 100, 17);
-        User u = new User(0, 0, "Wednesday", 7);
+        facility = new Facility();
+        facility.setFacilityID(6107);
+        facility.setFacilityLocation("Chicago");
+        facility.setEmployeeCount(500);
+        facility.setFacilityCapacity(1000);
+        facility.setBuildingCluster(building1);
 
         // Following line causes Bean Instantiation Exception
         FacilityManager facilityManager = (FacilityManager) context.getBean("facilityManager");
-        facilityManager.addNewFacility(facil1);
+        facilityManager = new FacilityManager();
+        facilityManager.addNewFacility(facility);
 
         //attaching facility as an observer to operationsManager
         FacilityOperations operationsManager = (FacilityOperations) context.getBean("facilityOperations");
         operationsManager = new FacilityOperations();
         operationsManager.attach(facility);
-        operationsManager.makeMaintenanceRequest(facility, "Deep Cleaning", 1);
+        MaintenanceRequest maintreq = (MaintenanceRequest) context.getBean("maintenanceRequest");
+        maintreq = operationsManager.makeMaintenanceRequest(facility, "Deep Cleaning", 1);
 
         facility.printFacilityInfo();
 
