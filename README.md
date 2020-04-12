@@ -12,11 +12,12 @@ Designed with 3 Packages:
 3. use - The members and methods required for making and managing facility usage and users
 
 ### Project 2: Object Wiring with Spring Framework
+Setup new classpath and spring container configuration/dependency relationships through xml configuration. Used ApplicationContext mechanism.
 
 ### Project 3: Bridge/Observer Implementation
 Bridge Implementation added by abstracting maintenance and use interfaces to the FacilityOperations class.  
 FacilityOperations is used by Facility and Client to perform and maintenace or use management methods rather than having to call them separately.
   
-Observer implementation   
+Observer implementation added by having the Facility class act as observer to the newly created FacilityOperations class. FacilityOperations can create things like MaintenanceRequests for certain Facilities, and individual Facilities should be observing FacilityOperations and then be updated automatically to include the newly created MaintenanceRequests, Inspections, Uses, etc for their specific Facility.  
 
 *UML Updated to reflect changes*
