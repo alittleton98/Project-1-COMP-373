@@ -5,7 +5,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import main.java.facility.*;
-//import main.java.client.*; unnnecessary 
 import main.java.maintenance.*;
 import main.java.operations.FacilityOperations;
 import main.java.use.*;
@@ -36,7 +35,7 @@ public class FacilityManagementSystemDriver {
         facilityManager = new FacilityManager();
         facilityManager.addNewFacility(facility);
 
-        //attaching facility as an observer to operationsManager
+        // attaching facility as an observer to operationsManager
         FacilityOperations operationsManager = (FacilityOperations) context.getBean("facilityOperations");
         operationsManager = new FacilityOperations();
         operationsManager.attach(facility);
