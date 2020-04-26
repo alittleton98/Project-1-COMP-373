@@ -4,6 +4,10 @@ package main.java.facility;
 
 interface FacilityManagement {
 
+    public void createFacility();
+
+    public void createFacility(int fID, String loc, boolean useCond, double cost, boolean maint, int cap, int empCount);
+
     public void listAvailableFacilities();
 
     public void getFacilityInformation(Facility f);

@@ -12,7 +12,7 @@ public class FacilityOperationsTest {
     Facility testFacility = new Facility();
     MaintenanceRequest m = new MaintenanceRequest(0, 0, "test", 1);
     User testUser = new User(12345678, 0, "Monday", 1);
-    FacilityOperations testFacilityOperations;
+    FacilityOperationsManager testFacilityOperations;
 
     @Test
     public void assignFacilityToUse() {

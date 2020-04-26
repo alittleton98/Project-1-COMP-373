@@ -1,5 +1,6 @@
 package main.java.facility;
 
+import  main.java.operations.*;
 import java.util.*;
 
 //Facility manager class
@@ -9,6 +10,12 @@ public class FacilityManager implements FacilityManagement {
     protected ArrayList<Facility> FacilitiesList;
     protected ArrayList<Facility> availableFacilities;
     Scanner user = new Scanner(System.in);
+
+    public void createFacility(){
+        Facility newFacility = new Facility();
+        newFacility.setFacilityID(FacilitiesList.size() + 1);
+        FacilitiesList.add(newFacility);
+    }
 
     // Function to list all available facilities from the FacilitiesList Arraylist
     public void listAvailableFacilities() {
@@ -88,6 +95,12 @@ public class FacilityManager implements FacilityManagement {
          * 
          * }
          */
+    }
+    public void listMaintenanceRequests(Facility f) {
+        
+        for (int i = 0; i < f.getMaintenanceRequests().size(); i++) {
+            f.getMaintenanceRequests().get(i).printRequestInfo();
+        }
     }
 
     // Removes the facility from the FacilitiesList arraylist

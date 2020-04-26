@@ -93,6 +93,7 @@ public class Facility implements Observer {
     // Function to add buildings to facility
     public void addBuilding(Building b) {
         buildingCluster.add(b);
+        b.setFacilityID(facilityIDNum);
     }
 
     // Function to add any given number of employees to facility
@@ -135,6 +136,10 @@ public class Facility implements Observer {
         for (int i = 0; i < facilityMaintenanceRequests.size(); i++) {
             facilityMaintenanceRequests.get(i).printRequestInfo();
         }
+    }
+
+    public ArrayList<MaintenanceRequest> getMaintenanceRequests(){
+        return facilityMaintenanceRequests;
     }
 
     // Returns all facility information
