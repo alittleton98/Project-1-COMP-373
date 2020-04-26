@@ -5,13 +5,13 @@ import main.java.maintenance.MaintenanceRequest;
 
 public class BuilderImpl implements Builder {
 
-    public Facility buildFacilityDef(){
-        FacilityManager fm = new FacilityManager();
+    public Facility buildFacilityDef(FacilityManager fm){
+        fm = new FacilityManager();
         fm.createFacility();
         return fm.getFacility(fm.getFacilitiesList().size() + 1);
     }
-    public Facility buildFacility(int fID, String loc, boolean useCond, double cost, boolean maint, int cap, int empCount){
-        FacilityManager fm = new FacilityManager();
+    public Facility buildFacility(int fID, String loc, boolean useCond, double cost, boolean maint, int cap, int empCount, FacilityManager fm){
+        fm = new FacilityManager();
         fm.createFacility(fID, loc, useCond, cost, maint, cap, empCount);
         return fm.getFacility(fID);
     }

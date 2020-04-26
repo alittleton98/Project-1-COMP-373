@@ -4,7 +4,7 @@ import main.java.facility.FacilityManager;
 
 public interface Visitor {
 
-    public void visit(FacilityManager facilityManager);
-    public void visit(FacilityOperationsManager facilityOperationsManager);
+    public boolean visit(FacilityManager facilityManager); //returns true if successful visit
+    public boolean visit(FacilityOperationsManager facilityOperationsManager); //returns true if successful visit
     
 }

@@ -2,13 +2,15 @@ package main.java.operations;
 
 import main.java.facility.*;
 
-public class VisitorImpl {
+public class VisitorImpl implements Visitor {
 
-    public void visit(FacilityManager facilityManager){
+    public boolean visit(FacilityManager facilityManager){
         audit();
+        return true; //returns true if called
     }
-    public void visit(FacilityOperationsManager facilityOperationsManager){
+    public boolean visit(FacilityOperationsManager facilityOperationsManager){
         audit();
+        return true; //returns true if called
     }
 
     public void audit() {

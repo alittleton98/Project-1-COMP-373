@@ -126,7 +126,13 @@ public class FacilityManager implements FacilityManagement, Visitable {
         return f;
     }
     
-    public void accept(Visitor visitor){
-        visitor.visit(this);
+    public boolean accept(Visitor visitor){
+        boolean wasVisited = false; //default state
+        
+        //if visitor visited then class will acknowledge and return true
+        if (visitor.visit(this)){
+            wasVisited = true; 
+        }
+        return wasVisited;
     }
 }

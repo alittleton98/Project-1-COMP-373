@@ -1,5 +1,5 @@
 package main.java.operations;
 
 public interface Visitable {
-    public void accept(Visitor visitor);
+    public boolean accept(Visitor visitor);
 }

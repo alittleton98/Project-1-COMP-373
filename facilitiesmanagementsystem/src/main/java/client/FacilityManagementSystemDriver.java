@@ -39,8 +39,9 @@ public class FacilityManagementSystemDriver {
         facility.printFacilityInfo();
 
         //Builder Implentation
-        Facility facilityDefault = builder.buildFacilityDef();
-        Facility facilityCustom = builder.buildFacility(6107, "Detroit", true, 15, false, 150, 140);
+        FacilityManager builderFacilityManager = new FacilityManager();
+        Facility facilityDefault = builder.buildFacilityDef(builderFacilityManager);
+        Facility facilityCustom = builder.buildFacility(6107, "Detroit", true, 15, false, 150, 140, builderFacilityManager);
         FacilityOperationsManager operationsManager2 = new FacilityOperationsManager();
         MaintenanceRequest builtMaintenanceRequest1 = builder.buildMaintenanceRequest(facilityDefault, "testing Default Facility", 7);
         MaintenanceRequest builtMaintenanceRequest2 = builder.buildMaintenanceRequest(facilityCustom, "testing Custom Facility", 7);
