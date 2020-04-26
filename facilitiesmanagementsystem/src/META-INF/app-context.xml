@@ -45,7 +45,7 @@
 
 	<bean id="observer" class="main.java.facility.Observer" scope="prototype"/>
 	
-	<bean id="facilityOperations" class="main.java.operations.FacilityOperations" scope="prototype">
+	<bean id="facilityOperationsManager" class="main.java.operations.FacilityOperationsManager" scope="prototype">
 		<property name = "userList">
 			<list>
             	<ref bean="user" />

@@ -10,7 +10,7 @@ import java.util.*;
 //Bridge pattern implementation
 //FacilityOperations connects to FacilityManagement
 
-public class FacilityOperations implements FacilityUse, FacilityMaintenance, Subject   {
+public class FacilityOperationsManager implements FacilityUse, FacilityMaintenance, Subject, Visitable   {
     protected ArrayList<User> userList;
     protected ArrayList<MaintenanceRequest> maintenanceRequestsList;
     private ArrayList<Observer> observers;
@@ -122,7 +122,6 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance, Sub
         int daysDown = 1;
         for (int i = 0; i < f.getMaintList().size(); i++) {
             MaintenanceRequest m = f.getMaintList().get(i);
-
         }
         return daysDown;
     }
@@ -139,5 +138,16 @@ public class FacilityOperations implements FacilityUse, FacilityMaintenance, Sub
 
     public void listFacilityProblems(Facility f) {
         // unsure
+    }
+
+    //Visitor implementaion
+    public boolean accept(Visitor visitor){ 
+        boolean wasVisited = false;
+        
+        //if visitor visited then class will acknowledge and return true
+        if (visitor.visit(this)){ 
+            wasVisited = true;
+        }
+        return wasVisited;
     }
 }

@@ -1,14 +1,38 @@
 package main.java.facility;
 
+import  main.java.operations.*;
 import java.util.*;
 
 //Facility manager class
 //Provides functionality for Facility interface
 
-public class FacilityManager implements FacilityManagement {
+public class FacilityManager implements FacilityManagement, Visitable {
     protected ArrayList<Facility> FacilitiesList;
     protected ArrayList<Facility> availableFacilities;
     Scanner user = new Scanner(System.in);
+
+    public void createFacility(){
+        Facility newFacility = new Facility();
+        newFacility.setFacilityID(FacilitiesList.size() + 1);
+        FacilitiesList.add(newFacility);
+    }
+
+    public void createFacility(int fID, String loc, boolean useCond, double cost, boolean maint, int cap, int empCount){
+        Facility newFacility = new Facility(fID, loc, useCond, cost, maint, cap, empCount);
+        FacilitiesList.add(newFacility);
+    }
+
+    public Facility getFacility(int FacilityID){
+        Facility toReturn = new Facility();
+
+        do {
+            for (int i = 0; i < FacilitiesList.size(); i++){
+                toReturn = FacilitiesList.get(i);
+            }
+        }while (toReturn.getFacilityID() != FacilityID);
+        
+        return toReturn;      
+    }
 
     // Function to list all available facilities from the FacilitiesList Arraylist
     
@@ -96,11 +120,26 @@ public class FacilityManager implements FacilityManagement {
          * }
          */
     }
+    public void listMaintenanceRequests(Facility f) {
+        
+        for (int i = 0; i < f.getMaintenanceRequests().size(); i++) {
+            f.getMaintenanceRequests().get(i).printRequestInfo();
+        }
+    }
 
     // Removes the facility from the FacilitiesList arraylist
     public Facility removeFacility(Facility f) {
         FacilitiesList.remove(f);
         return f;
     }
-
+    
+    public boolean accept(Visitor visitor){
+        boolean wasVisited = false; //default state
+        
+        //if visitor visited then class will acknowledge and return true
+        if (visitor.visit(this)){
+            wasVisited = true; 
+        }
+        return wasVisited;
+    }
 }
