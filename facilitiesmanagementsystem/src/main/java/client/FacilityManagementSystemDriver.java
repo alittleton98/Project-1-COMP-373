@@ -7,10 +7,10 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import main.java.facility.*;
 //import main.java.client.*; unnnecessary 
 import main.java.maintenance.*; 
-import main.java.operations.FacilityOperations;
+import main.java.operations.*;
 import main.java.use.*;
 
-public class FacilityManagementSystemDriver {
+public class FacilityManagementSystemDriver implements Visitor, Builder{
     public static void main(String[] args) {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("META-INF/app-context.xml");
