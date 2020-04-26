@@ -16,7 +16,7 @@ public class FacilityOperationsManager implements FacilityUse, FacilityMaintenan
     private ArrayList<Observer> observers;
     Scanner user = new Scanner(System.in);
     
-    public FacilityOperations(){
+    public FacilityOperationsManager(){
         this.userList = new ArrayList<User>();
         this.maintenanceRequestsList = new ArrayList<MaintenanceRequest>();
         this.observers = new ArrayList<Observer>();
