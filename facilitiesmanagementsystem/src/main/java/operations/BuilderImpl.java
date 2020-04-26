@@ -8,10 +8,12 @@ public class BuilderImpl implements Builder {
     public Facility buildFacilityDef(){
         FacilityManager fm = new FacilityManager();
         fm.createFacility();
+        return fm.getFacility(fm.getFacilitiesList().size() + 1);
     }
-    public Facility buildFacility(){
+    public Facility buildFacility(int fID, String loc, boolean useCond, double cost, boolean maint, int cap, int empCount){
         FacilityManager fm = new FacilityManager();
-        fm.createFacility();
+        fm.createFacility(fID, loc, useCond, cost, maint, cap, empCount);
+        return fm.getFacility(fID);
     }
 
     public MaintenanceRequest buildMaintenanceRequest(Facility f, String requestReason, int daysReq){

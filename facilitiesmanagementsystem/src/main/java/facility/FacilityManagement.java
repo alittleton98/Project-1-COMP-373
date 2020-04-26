@@ -8,6 +8,8 @@ interface FacilityManagement {
 
     public void createFacility(int fID, String loc, boolean useCond, double cost, boolean maint, int cap, int empCount);
 
+    public Facility getFacility(int FacilityID);
+
     public void listAvailableFacilities();
 
     public void getFacilityInformation(Facility f);

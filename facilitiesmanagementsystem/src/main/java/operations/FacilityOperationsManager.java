@@ -10,7 +10,7 @@ import java.util.*;
 //Bridge pattern implementation
 //FacilityOperations connects to FacilityManagement
 
-public class FacilityOperationsManager implements FacilityUse, FacilityMaintenance, Subject   {
+public class FacilityOperationsManager implements FacilityUse, FacilityMaintenance, Subject, Visitable   {
     protected ArrayList<User> userList;
     protected ArrayList<MaintenanceRequest> maintenanceRequestsList;
     private ArrayList<Observer> observers;
@@ -132,5 +132,9 @@ public class FacilityOperationsManager implements FacilityUse, FacilityMaintenan
 
     public void listFacilityProblems(Facility f) {
         // unsure
+    }
+
+    public void accept(Visitor visitor){
+        visitor.visit(this);
     }
 }

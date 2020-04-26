@@ -39,11 +39,13 @@ public class FacilityManagementSystemDriver {
         facility.printFacilityInfo();
 
         //Builder Implentation
-        Facility facility2 = builder.buildFacility();
+        Facility facilityDefault = builder.buildFacilityDef();
+        Facility facilityCustom = builder.buildFacility(6107, "Detroit", true, 15, false, 150, 140);
         FacilityOperationsManager operationsManager2 = new FacilityOperationsManager();
-        MaintenanceRequest builtMaintenanceRequest = builder.buildMaintenanceRequest(facility2, "testing", 7);
-        operationsManager2.notifyUpdate(builtMaintenanceRequest); //feels clunky.Maybe apply to one line?
-
+        MaintenanceRequest builtMaintenanceRequest1 = builder.buildMaintenanceRequest(facilityDefault, "testing Default Facility", 7);
+        MaintenanceRequest builtMaintenanceRequest2 = builder.buildMaintenanceRequest(facilityCustom, "testing Custom Facility", 7);
+        operationsManager2.notifyUpdate(builtMaintenanceRequest1); 
+        operationsManager2.notifyUpdate(builtMaintenanceRequest2);
 
         // TODO Add presentation logic here!
     }
