@@ -18,6 +18,7 @@ public class FacilityManagementSystemDriver {
 
         //Design pattern implementation objects
         BuilderImpl builder = new BuilderImpl();
+        VisitorImpl visitor = new VisitorImpl();
 
         // Testing package imports
         Building building1 = (Building) context.getBean("building");
@@ -50,15 +51,17 @@ public class FacilityManagementSystemDriver {
 
         facility.printFacilityInfo();
 
-        //Builder Implentation
+        //Builder/Visitor Implentation
         FacilityManager builderFacilityManager = new FacilityManager();
-        Facility facilityDefault = builder.buildFacilityDef(builderFacilityManager);
-        Facility facilityCustom = builder.buildFacility(6107, "Detroit", true, 15, false, 150, 140, builderFacilityManager);
+        Facility facilityDefault = builder.buildFacilityDef(builderFacilityManager); //creates facility using builder class using default constructor
+        Facility facilityCustom = builder.buildFacility(6107, "Detroit", true, 15, false, 150, 140, builderFacilityManager); //creates facility using builder class but with parameters
         FacilityOperationsManager operationsManager2 = new FacilityOperationsManager();
-        MaintenanceRequest builtMaintenanceRequest1 = builder.buildMaintenanceRequest(facilityDefault, "testing Default Facility", 7);
-        MaintenanceRequest builtMaintenanceRequest2 = builder.buildMaintenanceRequest(facilityCustom, "testing Custom Facility", 7);
-        operationsManager2.notifyUpdate(builtMaintenanceRequest1); 
-        operationsManager2.notifyUpdate(builtMaintenanceRequest2);
+        MaintenanceRequest builtMaintenanceRequest1 = builder.buildMaintenanceRequest(facilityDefault, "testing Default Facility", 7); //creates maint req using builder for default facility
+        MaintenanceRequest builtMaintenanceRequest2 = builder.buildMaintenanceRequest(facilityCustom, "testing Custom Facility", 7); //creates maint req for custom facility
+        operationsManager2.notifyUpdate(builtMaintenanceRequest1); //uses observer to update facility manager with maintenance requests for the facility the req belongs to (facilityDefault)
+        operationsManager2.notifyUpdate(builtMaintenanceRequest2); //uses observer to update facility manager with maintenance requests for the facility the req belongs to (facilityCustom)
+        visitor.visit(builderFacilityManager); //performs visit function on facility manager declared above
+        visitor.visit(operationsManager2); //performs visit function on facility manager declared above
 
 
     }

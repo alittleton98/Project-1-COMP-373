@@ -5,12 +5,23 @@ import main.java.facility.*;
 public class VisitorImpl implements Visitor {
 
     public boolean visit(FacilityManager facilityManager){
-        audit();
-        return true; //returns true if called
+        if (facilityManager.accept(this)){
+            audit();
+            return true;
+        }
+        else{
+            return false;
+        }
+        
     }
     public boolean visit(FacilityOperationsManager facilityOperationsManager){
-        audit();
-        return true; //returns true if called
+        if (facilityOperationsManager.accept(this)){
+            audit();
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     public void audit() {
